@@ -1,3 +1,5 @@
+import sys
+
 print("Welcome to Calculate\n")
 print("A simple command line calculator application\n")
 
@@ -76,5 +78,17 @@ while True:
         elif choice == "7":
             answer = floor_div(num_1, num_2)
             print(f"{num_1} ÷ {num_2} (floored) = {answer}\n")
+
+        else:
+            print("Invalid Choice")
+
+        keepGoing = input("Continue Calculating? Yes/No").capitalize()
+
+        if keepGoing == "Yes":
+            userMath()
+
+        else:
+            sys.exit()
+
 
     userMath()
