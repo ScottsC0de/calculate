@@ -1,6 +1,6 @@
 import sys
 
-print("Welcome to Calculate\n")
+print("\nWelcome to Calculate\n")
 print("A simple command line calculator application\n")
 
 
@@ -45,7 +45,7 @@ print("7. Floor Division")
 
 while True:
 
-    def userMath():
+    def calculate():
         choice = input("Please select the number of your desired action ")
 
         num_1 = int(input("\nEnter first number "))
@@ -82,13 +82,12 @@ while True:
         else:
             print("Invalid Choice")
 
-        keepGoing = input("Continue Calculating? Yes/No").capitalize()
+        keepGoing = input("Continue Calculating? Yes/No ").capitalize()
 
         if keepGoing == "Yes":
-            userMath()
+            calculate()
 
         else:
             sys.exit()
 
-
-    userMath()
+    calculate()
