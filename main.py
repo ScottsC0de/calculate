@@ -43,51 +43,50 @@ print("6. Exponent")
 print("7. Floor Division")
 
 
-while True:
+def calculate():
+    choice = input("Please select the number of your desired action ")
 
-    def calculate():
-        choice = input("Please select the number of your desired action ")
+    num_1 = int(input("\nEnter first number "))
+    num_2 = int(input("Enter second number "))
 
-        num_1 = int(input("\nEnter first number "))
-        num_2 = int(input("Enter second number "))
+    if choice == "1":
+        answer = add(num_1, num_2)
+        print(f"{num_1} + {num_2} = {answer}\n")
 
-        if choice == "1":
-            answer = add(num_1, num_2)
-            print(f"{num_1} + {num_2} = {answer}\n")
+    elif choice == "2":
+        answer = subtract(num_1, num_2)
+        print(f"{num_1} - {num_2} = {answer}\n")
 
-        elif choice == "2":
-            answer = subtract(num_1, num_2)
-            print(f"{num_1} - {num_2} = {answer}\n")
+    elif choice == "3":
+        answer = multiply(num_1, num_2)
+        print(f"{num_1} x {num_2} = {answer}\n")
 
-        elif choice == "3":
-            answer = multiply(num_1, num_2)
-            print(f"{num_1} x {num_2} = {answer}\n")
+    elif choice == "4":
+        answer = divide(num_1, num_2)
+        print(f"{num_1} ÷ {num_2} = {answer}\n")
 
-        elif choice == "4":
-            answer = divide(num_1, num_2)
-            print(f"{num_1} ÷ {num_2} = {answer}\n")
+    elif choice == "5":
+        answer = remainder(num_1, num_2)
+        print(f"The remainder of {num_1} ÷ {num_2} is {answer}\n")
 
-        elif choice == "5":
-            answer = remainder(num_1, num_2)
-            print(f"The remainder of {num_1} ÷ {num_2} is {answer}\n")
+    elif choice == "6":
+        answer = exponent(num_1, num_2)
+        print(f"{num_1} to the {num_2} power is {answer}\n")
 
-        elif choice == "6":
-            answer = exponent(num_1, num_2)
-            print(f"{num_1} to the {num_2} power is {answer}\n")
+    elif choice == "7":
+        answer = floor_div(num_1, num_2)
+        print(f"{num_1} ÷ {num_2} (floored) = {answer}\n")
 
-        elif choice == "7":
-            answer = floor_div(num_1, num_2)
-            print(f"{num_1} ÷ {num_2} (floored) = {answer}\n")
+    else:
+        print("Invalid Choice")
 
-        else:
-            print("Invalid Choice")
+    keepGoing = input("Continue Calculating? Yes/No ").capitalize()
 
-        keepGoing = input("Continue Calculating? Yes/No ").capitalize()
+    if keepGoing == "Yes":
+        calculate()
 
-        if keepGoing == "Yes":
-            calculate()
+    else:
+        sys.exit()
 
-        else:
-            sys.exit()
 
-    calculate()
+calculate()
